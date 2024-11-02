@@ -1,4 +1,8 @@
-node {
+pipeline {
+    agent any
+       tools {
+           maven 'mvn'
+       }
    
     stages {
         stage('Git clone') {
@@ -9,19 +13,9 @@ node {
           }
         stage('build') {
           steps{
-            sh 'mvn compile'
+            sh 'mvn clean package'
          }
        }
-        stage('test') {
-         steps{
-           sh 'mvn test'
-        }
-      }
-        stage('artifact') {
-          steps{
-          sh 'mvn package'
-          }
-      }
-
+      
 }
 }
