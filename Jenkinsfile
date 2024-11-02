@@ -9,7 +9,7 @@ pipeline {
         stage('Git clone') {
             steps {
                 // Get some code from a GitHub repository
-               git 'https://github.com/vdbsrinivasarao/jenkins-java-project.git'
+               git 'https://github.com/vdbsrinivasarao/maven_project.git'
                  }
           }
         stage('build') {
