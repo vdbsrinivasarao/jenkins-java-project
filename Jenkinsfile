@@ -23,13 +23,11 @@ pipeline {
       }
        stage('Deploy'){ 
          steps{
-             sshagent(['ansiblessh']) {
-                  
-                    sh 'ansible-playbook playbook.yaml -i inventory.ini'
+             ansiblePlaybook becomeUser: null, credentialsId: 'ansiblessh', installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/playbook.yaml', sudoUser: null, vaultTmpPath: ''
                }
            }
-        }     
+           
      }
- }
+}
        
                        
