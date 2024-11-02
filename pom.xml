@@ -43,7 +43,7 @@
 	    <pluginRepository>    
 		<id>maven1</id>
 		<name>Maven.org</name>
-		<url>http://repo1.maven.org/maven2</url>
+		<url>http://repo1.maven.org/maven3</url>
 	    </pluginRepository>
 	</pluginRepositories>
 
