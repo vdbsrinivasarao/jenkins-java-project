@@ -1,10 +1,5 @@
-pipeline {
-    agent any
-          tools {
-        // Install the Maven version configured as "Maven3" and add it to the path.
-           maven "Maven3"
-          }
-    
+node {
+   
     stages {
         stage('Git clone') {
             steps {
