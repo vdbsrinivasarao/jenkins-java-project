@@ -38,7 +38,11 @@
 		    <url>http://13.233.230.166:8081/repository/maven-releases/</url>
 		</repository>
   	</distributionManagement>
-	
+	<properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+      </properties>
+
 	<pluginRepositories>
 	    <pluginRepository>    
 		<id>maven1</id>
