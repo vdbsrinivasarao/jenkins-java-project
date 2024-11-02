@@ -19,13 +19,17 @@ pipeline {
       stage('up load to s3 bucket'){
        steps{   
        s3Upload consoleLogLevel: 'INFO', dontSetBuildResultOnFailure: false, dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'vdbnetflixdemo', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'ap-south-1', showDirectlyInBrowser: false, sourceFile: 'target/NETFLIX-1.2.2.war', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 's3profile', userMetadata: []
-       }
-       }
-       stage(' deploy'){
-          steps{
-              ansiblePlaybook credentialsId: 'ansiblessh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', limit: '$server', playbook: '/etc/ansible/playbook.yaml', vaultTmpPath: ''
-          }
-        }
-    }     
+            }
+      }
+       stage('Deploy'){ 
+         steps{
+             sshagent(['ansiblessh']) {
+                  
+                    sh 'ansible-playbook playbook.yaml -i inventory.ini'
+               }
+           }
+        }     
+     }
+ }
+       
                        
-}
