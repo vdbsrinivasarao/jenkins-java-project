@@ -35,10 +35,10 @@ pipeline {
                     // Use the sshagent to execute commands on the Ansible server
                     sshagent([ansiblessh]) {
                         // Copy the WAR file to the Ansible server
-                        sh "scp ${NETFLIX-1.2.2.war} ubuntu@${ANSIBLE_HOST}:${/etc/ansible}"
+                        sh "scp {NETFLIX-1.2.2.war} ubuntu@{ANSIBLE_HOST}:{/etc/ansible}"
                         
                         // Execute Ansible playbook or command to deploy the WAR file
-                        sh "ssh ubuntu@${ANSIBLE_HOST} 'ansible-playbook /etc/ansible/playbook.yaml'"
+                        sh "ssh ubuntu@{ANSIBLE_HOST} 'ansible-playbook /etc/ansible/playbook.yaml'"
                     }
                 }
             }  
