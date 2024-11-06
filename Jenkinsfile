@@ -28,7 +28,14 @@ pipeline {
         sh  'scp /var/lib/jenkins/workspace/Jenkins_Ansible-intergration/target/NETFLIX-1.2.2.war ubuntu@172.31.6.48:/home/ubuntu'
           }
         }
-      }      
+      }    
+       stage('Deploy'){ 
+         steps{
+            ansiblePlaybook credentialsId: 'ansiblessh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/playbook.yaml', vaultTmpPath: ''
+               }
+           }
+
+         
      }
 }
        
