@@ -31,15 +31,11 @@ pipeline {
       }    
       stage('Run Ansible Playbook'){
          steps {
-           script { 
-            sshagent(['ansiblessh']) {
-             sh 'ansible-playbook -i /etc/ansible/hosts  /etc/ansible/playbook.yml' 
+           ansiblePlaybook credentialsId: 'devssh', disableHostKeyChecking: true, installation: 'ansible', inventory: 'etc/ansible/hosts', playbook: '/etc/ansible/playbook.yaml', vaultTmpPath: ''
               }
           }
-        }
-      }
-
-         
+        
+               
      }
 }
        
