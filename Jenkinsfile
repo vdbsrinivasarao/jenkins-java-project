@@ -32,7 +32,7 @@ pipeline {
       stage('Run Ansible Playbook'){
          steps {
            script { 
-            sshagent(['devssh']) {
+            sshagent(['ansiblessh']) {
              sh 'ansible-playbook -i /etc/ansible/hosts  /etc/ansible/playbook.yml' 
               }
           }
