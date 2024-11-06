@@ -24,7 +24,7 @@ pipeline {
       stage ( ' copy war file to ansible'){   
        sshagent(['ansiblessh']) {
         sh 'ssh -o StrictHostKeyChecking=no  ubuntu@172.31.6.48’
-        sh ‘scp  /var/lib/jenkins/workspace/Jenkins_Ansible-intergration/*  ubuntu@172.31.6.48: /home/ubuntu’
+        sh ‘scp /var/lib/jenkins/workspace/Jenkins_Ansible-intergration/*  ubuntu@172.31.6.48:/home/ubuntu’
           }
         }
            
