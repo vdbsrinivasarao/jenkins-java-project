@@ -29,11 +29,15 @@ pipeline {
           }
         }
       }    
-       stage('Deploy'){ 
-         steps{
-            ansiblePlaybook credentialsId: 'devssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/playbook.yaml', vaultTmpPath: ''
-               }
-           }
+      stage('Run Ansible Playbook'){
+         steps {
+           script { 
+            sshagent(['devssh']) {
+             sh 'ansible-playbook -i /etc/ansible/hosts  /etc/ansible/playbook.yml' 
+              }
+          }
+        }
+      }
 
          
      }
