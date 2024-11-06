@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent ansible
        tools {
            maven 'mvn'
        }
