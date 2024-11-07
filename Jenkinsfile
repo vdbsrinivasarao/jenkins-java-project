@@ -30,13 +30,14 @@ pipeline {
         }
       }    
       stage('Run Ansible Playbook'){
-         ansiblePlaybook {
+           steps{
+            ansiblePlaybook {
               inventory:'/etc/ansible/hosts'
               installation: 'ánsible'
               playbook: '/etc/ansible/playbook.yaml'
          }
       }    
-              
+      }         
                   
                
      }
