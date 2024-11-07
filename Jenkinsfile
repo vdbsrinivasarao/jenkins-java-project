@@ -31,7 +31,7 @@ pipeline {
       }    
        stage('Deploy'){ 
          steps{
-            ansiblePlaybook credentialsId:'ansadmin', disableHostKeyChecking:true, installation:'ansible', inventory:'root@172.31.6.48:/etc/ansible/hosts', playbook:'root@172.31.6.48:/etc/ansible/playbook.yaml  ', vaultTmpPath: ''
+            ansiblePlaybook credentialsId:'ansiblessh', disableHostKeyChecking:true, installation:'ansible', inventory:'root@172.31.6.48:/etc/ansible/hosts', playbook:'root@172.31.6.48:/etc/ansible/playbook.yaml  ', vaultTmpPath: ''
                }
            }
      
