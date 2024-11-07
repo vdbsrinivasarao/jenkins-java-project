@@ -29,15 +29,12 @@ pipeline {
           }
         }
       }    
-      stage('Run Ansible Playbook'){
-           steps{
-            ansiblePlaybook {
-              inventory:'/etc/ansible/hosts'
-              installation: 'ánsible'
-              playbook: '/etc/ansible/playbook.yaml'
-         }
-      }    
-      }         
+       stage('Deploy'){ 
+         steps{
+            ansiblePlaybook credentialsId: 'ansiblessh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/playbook.yaml', vaultTmpPath: ''
+               }
+           }
+     
                   
                
      }
