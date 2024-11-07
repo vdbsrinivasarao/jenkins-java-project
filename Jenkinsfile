@@ -35,7 +35,7 @@ pipeline {
               installation: 'ánsible'
               playbook: '/etc/ansible/playbook.yaml'
          }
-           
+      }    
               
                   
                
