@@ -1,9 +1,9 @@
 version: 0.0
 os: linux
 files:
-  - source: /target/myjavaproject.war
-    destination: /tmp/codedeploy-deployment-staging-area/
-hooks:
+  - source: /myjavaproject.war
+    destination: /root/apache-tomcat-9.0.97/webapps/
+hooks:    
   BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
