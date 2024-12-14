@@ -1,22 +1,24 @@
 version: 0.2
+
 phases:
   install: 
     runtime-versions:
       java: corretto11
   build:
     commands:
-       - mvn clean package
+      - mvn clean package
   post_build:
-     commands:
-       - echo "build completed"
+    commands:
+      - echo "Build completed successfully."
+
 artifacts:
   files:
     - target/*.war
     - server_start.sh
     - server_shutdown.sh
     - appspec.yaml
-environment_variables:
-   key: "ARTIFACTS_ENCRYPTION_KEY"
-   value: "alias/aws/s3/myjavaproject"
+  discard-paths: yes
 
-  discard-paths: yes    
+environment_variables:
+  plaintext:
+    ARTIFACTS_ENCRYPTION_KEY: "alias/aws/s3/myjavaproject"
