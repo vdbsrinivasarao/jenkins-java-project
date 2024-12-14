@@ -15,4 +15,8 @@ artifacts:
     - server_start.sh
     - server_shutdown.sh
     - appspec.yaml
+environment_variables:
+   key: "ARTIFACTS_ENCRYPTION_KEY"
+   value: "alias/aws/s3/myjavaproject"
+
   discard-paths: yes    
