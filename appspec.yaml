@@ -6,6 +6,7 @@ files:
 hooks:    
   BeforeInstall:
     - location: install_dependencies.sh
+    - chmod +x install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
