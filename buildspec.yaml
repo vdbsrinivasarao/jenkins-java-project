@@ -19,6 +19,4 @@ artifacts:
     - appspec.yaml
   discard-paths: yes
 
-environment_variables:
-  plaintext:
-    ARTIFACTS_ENCRYPTION_KEY: "alias/aws/s3/myjavaproject"
+
