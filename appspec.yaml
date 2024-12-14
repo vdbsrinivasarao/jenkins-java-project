@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /myjavaproject.war
+  - source: /target/*.war
     destination: /root/apache-tomcat-9.0.97/webapps/
 hooks:    
   
