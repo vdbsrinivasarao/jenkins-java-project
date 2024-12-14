@@ -4,7 +4,10 @@ files:
   - source: /target/*.war
     destination: /root/apache-tomcat-9.0.97/webapps/
 hooks:    
-  
+  BeforeInstall:
+    - location: install_dependencies.sh
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: server_start.sh
       timeout: 300
