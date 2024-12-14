@@ -9,11 +9,8 @@ hooks:
     - location: server_start.sh
       timeout: 300
       runas: root
-  ApplicationStart:
-    - location: scripts/start_server.sh
+  ApplicationStop:
+    - location: start_stop.sh
       timeout: 300
       runas: root
-  ValidateService:
-    - location: scripts/validate.sh
-      timeout: 300
-      runas: root
+ 
