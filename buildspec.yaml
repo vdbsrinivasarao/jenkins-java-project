@@ -13,6 +13,6 @@ artifacts:
   files:
     - target/*.war
     - scripts/server_start.sh
-    - scripts/server_stop.sh
+    - scripts/server_shutdown.sh
     - appspec.yaml
   discard-paths: yes    
