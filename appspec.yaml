@@ -3,6 +3,8 @@ os: linux
 files:
   - source: /target/*.war
     destination: /root/apache-tomcat-9.0.97/webapps/
+  - source: scripts/install_dependencies.sh
+    destination: /opt/scripts
 hooks:    
   BeforeInstall:
     - location: install_dependencies.sh
