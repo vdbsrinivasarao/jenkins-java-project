@@ -12,7 +12,7 @@ phases:
 artifacts:
   files:
     - target/*.war
-    - scripts/server_start.sh
-    - scripts/server_shoutdown.sh
+    - server_start.sh
+    - server_shoutdown.sh
     - appspec.yaml
   discard-paths: yes    
