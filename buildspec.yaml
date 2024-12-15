@@ -13,7 +13,7 @@ phases:
 
 artifacts:
   files:
-    - '**/myjavaproject.war'
+    - '**/NETFLIX-1.2.2.war'
     - install.sh  
     - appspec.yaml
   
