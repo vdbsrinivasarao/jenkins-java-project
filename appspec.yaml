@@ -1,22 +1,9 @@
 version: 0.0
 os: linux
-files:
-  - source: /target/*.war
-    destination: /root/apache-tomcat-9.0.97/webapps/
-  - source: scripts/install_dependencies.sh
-    destination: /opt/scripts
+
 hooks:    
   BeforeInstall:
-    - location: install_dependencies.sh
-    - chmod +x install_dependencies.sh
+    - location: install.sh
       timeout: 300
       runas: root
-  AfterInstall:
-    - location: server_start.sh
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: server_shutdown.sh
-      timeout: 300
-      runas: root
- 
+
