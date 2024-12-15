@@ -14,7 +14,7 @@ phases:
 artifacts:
   files:
     - '**/myjavaproject.war'
-      
+    - install.sh  
     - appspec.yaml
   
   discard-paths: yes
