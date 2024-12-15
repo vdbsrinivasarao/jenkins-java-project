@@ -13,11 +13,10 @@ phases:
 
 artifacts:
   files:
-    - target/*.war
-    - server_start.sh
-    - server_shutdown.sh
+    - '**/myjavawebapp.war
+      
     - appspec.yaml
-    - install_dependencies.sh
+  
   discard-paths: yes
 
 
