@@ -4,7 +4,7 @@ files:
   - sorce: /index.jsp
     destination: /var/www/html/
 hooks:    
-  BeforeInstall:
+  BeforeInstall: 
      - location: scripts/server_start.sh
        timeout: 300
       
