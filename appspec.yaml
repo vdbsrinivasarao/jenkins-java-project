@@ -1,9 +1,16 @@
 version: 0.0
 os: linux
-
+files: 
+  - sorce: /index.jsp
+    destination: /var/www/html/
 hooks:    
   BeforeInstall:
-    - location: install.sh
+    - location: scripts/install_dependencies
       timeout: 300
+      location: scripts/server_start.sh
       runas: root
+  ApplicationStop:
+     - location: scripts/server_shutdown.sh
+       timeout: 300
+       runas: root
 
