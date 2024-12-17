@@ -1,13 +1,12 @@
 version: 0.0
 os: linux
 files: 
-  - source: /index.jsp
-    destination: /root/apache-tomcat-9.0.97/webapps
+  - source: /*.war
+    destination: /root/apache-tomcat-9.0.97/webapps/
 hooks:    
-  BeforeInstall: 
+  AfterInstall: 
      - location: scripts/server_start.sh
        timeout: 300
-      
        runas: root
   ApplicationStop:
      - location: scripts/server_shutdown.sh
