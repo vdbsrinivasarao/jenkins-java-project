@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files: 
   - source: /index.jsp
-    destination: /var/www/html/
+    destination: /root/apache-tomcat-9.0.97/webapps
 hooks:    
   BeforeInstall: 
      - location: scripts/server_start.sh
